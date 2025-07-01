@@ -1,5 +1,5 @@
 //DESENVOLVIDO POR DIEGO
-import { FormaPagamentoService } from "../services/FormaPagamentoService.js";
+import { FormaPagamentoService } from "../services/formaPagamentoService.js";
 
 class FormaPagamentoController {
 

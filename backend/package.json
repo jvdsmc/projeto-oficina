@@ -1,13 +1,15 @@
 {
-  "name": "scv-backend-node-sequelize",
+  "name": "projeto-oficina",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "build": "npm install",
+    "start": "node src/server.js"
   },
-  "author": "Rafael Vargas",
+  "author": "João Victor",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

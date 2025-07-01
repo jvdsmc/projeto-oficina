@@ -6,9 +6,22 @@ import sequelize from './config/database-connection.js';
 
 const app = express();
 
-// Apenas esta linha é necessária para o CORS funcionar localmente
-app.use(cors({ origin: 'http://localhost:5173' }));
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://jvdsmc.github.io'
+];
 
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Acesso não permitido por CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(routes);
 app.use(errorHandler);
